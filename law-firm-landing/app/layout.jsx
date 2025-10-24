@@ -1,18 +1,18 @@
 import './globals.css'
-import { Cormorant_Garamond, Libre_Baskerville } from 'next/font/google'
+import { Inter, Work_Sans } from 'next/font/google'
 
-const baskerville = Libre_Baskerville({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400', '500'],
   display: 'swap',
-  variable: '--font-baskerville',
+  variable: '--font-inter',
 })
 
-const cormorant = Cormorant_Garamond({
+const workSans = Work_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['500', '600', '700'],
   display: 'swap',
-  variable: '--font-cormorant',
+  variable: '--font-work-sans',
 })
 
 export const metadata = {
@@ -24,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${baskerville.variable} ${cormorant.variable} ${baskerville.className}`}>
+      <body className={`${inter.variable} ${workSans.variable} ${inter.className}`}>
         {children}
       </body>
     </html>

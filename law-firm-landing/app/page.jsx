@@ -140,28 +140,29 @@ export default function Home() {
   return (
     <div className="page">
       <header className="site-header" aria-label="En-tête principal">
-        <a className="brand" href="#accueil">
-          <span className="brand-mark">P</span>
-          <span className="brand-text">
-            <span className="brand-name">Ponthieu Avocats</span>
-            <span className="brand-baseline">Cabinet d’excellence</span>
-          </span>
-        </a>
-        <nav className="site-nav" aria-label="Navigation principale">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
-        <Button as="a" href="#contact" variant="secondary" size="sm" className="header-cta">
-          Consultation
-        </Button>
+        <div className="header-inner">
+          <a className="brand" href="#accueil">
+            <span className="brand-mark">P</span>
+            <span className="brand-text">
+              <span className="brand-name">Ponthieu Avocats</span>
+              <span className="brand-baseline">Cabinet d’excellence</span>
+            </span>
+          </a>
+          <nav className="site-nav" aria-label="Navigation principale">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <Button as="a" href="#contact" variant="secondary" size="sm" className="header-cta">
+            Consultation
+          </Button>
+        </div>
       </header>
 
       <main>
         <section className="hero" id="accueil">
-          <div className="hero-overlay" />
           <div className="hero-content">
             <p className="hero-eyebrow">Cabinet à taille humaine — Impact global</p>
             <h1>Nous sécurisons vos décisions structurantes et vos innovations stratégiques.</h1>
