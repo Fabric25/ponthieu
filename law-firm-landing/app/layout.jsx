@@ -1,18 +1,11 @@
 import './globals.css'
-import { Inter, Work_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-inter',
-})
-
-const workSans = Work_Sans({
-  subsets: ['latin'],
-  weight: ['500', '600', '700'],
-  display: 'swap',
-  variable: '--font-work-sans',
 })
 
 export const metadata = {
@@ -24,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${inter.variable} ${workSans.variable} ${inter.className}`}>
+      <body className={`${inter.variable} ${inter.className}`}>
         {children}
       </body>
     </html>
