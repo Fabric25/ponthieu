@@ -1,10 +1,18 @@
 import './globals.css'
-import { Libre_Baskerville } from 'next/font/google'
+import { Cormorant_Garamond, Libre_Baskerville } from 'next/font/google'
 
 const baskerville = Libre_Baskerville({
   subsets: ['latin'],
   weight: ['400', '700'],
   display: 'swap',
+  variable: '--font-baskerville',
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-cormorant',
 })
 
 export const metadata = {
@@ -16,7 +24,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={baskerville.className}>{children}</body>
+      <body className={`${baskerville.variable} ${cormorant.variable} ${baskerville.className}`}>
+        {children}
+      </body>
     </html>
   )
 }
