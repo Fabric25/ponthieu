@@ -1,223 +1,298 @@
-const practiceAreas = [
+const activities = [
   {
-    title: 'Corporate Law',
+    title: 'Droit Économique',
     description:
-      'Strategic counsel for mergers, acquisitions, compliance, and corporate governance that protects every stage of your business.',
+      'Structuration de vos opérations commerciales, compliance concurrentielle et accompagnement stratégique en France et à l’international.',
   },
   {
-    title: 'Litigation & Dispute Resolution',
+    title: 'Data Protection Officer (DPO)',
     description:
-      'Seasoned litigators who resolve complex disputes in and out of the courtroom with clear strategies and relentless advocacy.',
+      'Pilotage de votre conformité RGPD, cartographie des risques, audits de protection des données et gouvernance digitale.',
   },
   {
-    title: 'Estate Planning',
+    title: 'Droit des contrats',
     description:
-      'Thoughtful estate and trust planning tailored to preserve your legacy and provide peace of mind for the next generation.',
+      'Négociation, rédaction et sécurisation de vos contrats complexes pour protéger durablement vos engagements.',
   },
   {
-    title: 'Real Estate',
+    title: 'Contentieux',
     description:
-      'Guidance for commercial and residential transactions, zoning, and development backed by decades of market insight.',
+      'Représentation incisive devant toutes juridictions, stratégie de règlement des litiges et procédures d’urgence.',
+  },
+  {
+    title: 'Droit du sport',
+    description:
+      'Accompagnement des acteurs du sport sur les transferts, partenariats, contrats d’image et gouvernance des clubs.',
+  },
+  {
+    title: 'Propriété intellectuelle',
+    description:
+      'Protection de vos créations, portefeuilles de marques, brevets et droits d’auteur dans les secteurs innovants.',
+  },
+  {
+    title: 'Droit de l’informatique',
+    description:
+      'Sécurisation de vos projets technologiques, contrats IT, cloud et logiciels critiques.',
   },
 ]
 
-const testimonials = [
+const publications = [
   {
-    quote: 'Their team navigated a complicated acquisition with clarity and confidence. We always felt one step ahead.',
-    name: 'Alex Martinez',
-    role: 'COO, NorthBridge Holdings',
+    title: 'Cartographier les risques RGPD dans un groupe international',
+    excerpt:
+      'Nos équipes déploient un dispositif de gouvernance des données pour sécuriser les échanges transfrontaliers et renforcer la confiance des utilisateurs.',
+    date: 'Mars 2024',
+    link: '#',
   },
   {
-    quote: 'From our first meeting we knew we were in the right hands. Their attention to detail saved our family business.',
-    name: 'Priya Desai',
-    role: 'Founder, Desai Hospitality Group',
+    title: 'Les clauses essentielles d’un contrat SaaS premium',
+    excerpt:
+      'Checklist des stipulations à fort enjeu pour préserver votre propriété intellectuelle et vos engagements de disponibilité.',
+    date: 'Février 2024',
+    link: '#',
+  },
+  {
+    title: 'Contentieux économique : anticiper pour mieux défendre',
+    excerpt:
+      'Analyse des leviers pré-contentieux pour sécuriser vos relations commerciales et optimiser vos chances de succès.',
+    date: 'Janvier 2024',
+    link: '#',
   },
 ]
 
-const stats = [
-  { label: 'Years of combined experience', value: '85+' },
-  { label: 'Successful case resolutions', value: '1,200' },
-  { label: 'Client satisfaction rating', value: '98%' },
+const team = [
+  {
+    name: 'Benjamin Ponthieu',
+    role: 'Avocat à la cour',
+    email: 'benjamin@ponthieuavocats.com',
+    image:
+      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
+    imageAlt: 'Young woman with long red hair against teal backdrop',
+  },
+  {
+    name: 'Salomé Larcher',
+    role: 'Avocat à la cour',
+    email: 'salome@ponthieuavocats.com',
+    image:
+      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
+    imageAlt: 'Young woman with long red hair against teal backdrop',
+  },
+  {
+    name: 'François Ponthieu',
+    role: 'Avocat à la cour',
+    email: 'francois@ponthieuavocats.com',
+    image:
+      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
+    imageAlt: 'Young woman with long red hair against teal backdrop',
+  },
+  {
+    name: 'Diane Rattalino',
+    role: 'Avocat à la cour',
+    email: 'diane@ponthieuavocats.com',
+    image:
+      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
+    imageAlt: 'Young woman with long red hair against teal backdrop',
+  },
 ]
 
 export default function Home() {
   return (
     <div className="page">
-      <header className="top-bar">
-        <div className="brand">
+      <header className="site-header" aria-label="En-tête principal">
+        <a className="brand" href="#accueil">
           <span className="brand-mark">P</span>
-          <div>
-            <p className="brand-name">Ponthieu Legal Group</p>
-            <p className="brand-tagline">Trusted Counsel. Proven Results.</p>
-          </div>
-        </div>
-        <nav className="nav-links" aria-label="Primary">
-          <a href="#practice-areas">Practice Areas</a>
-          <a href="#about">About</a>
-          <a href="#testimonials">Testimonials</a>
+          <span className="brand-text">
+            <span className="brand-name">Ponthieu Avocats</span>
+            <span className="brand-baseline">Cabinet d’excellence</span>
+          </span>
+        </a>
+        <nav className="site-nav" aria-label="Navigation principale">
+          <a href="#activites">Activités</a>
+          <a href="#publications">Publications</a>
+          <a href="#equipe">Nos avocats</a>
+          <a href="#vision">Notre vision</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="cta-button" href="#contact">
-          Schedule Consultation
+        <a className="header-cta" href="#contact">
+          Prendre rendez-vous
         </a>
       </header>
 
       <main>
-        <section className="hero" id="top">
-          <div className="hero-text">
-            <p className="eyebrow">Boutique representation for complex matters</p>
-            <h1>Guiding businesses and families through pivotal decisions with unwavering expertise.</h1>
-            <p className="intro">
-              At Ponthieu Legal Group, our attorneys pair deep industry knowledge with attentive partnership. From proactive
-              counseling to high-stakes litigation, we deliver strategies that safeguard what matters most.
+        <section className="hero" id="accueil">
+          <div className="hero-overlay" />
+          <div className="hero-content">
+            <p className="hero-eyebrow">Cabinet à taille humaine, impact international</p>
+            <h1>Votre partenaire juridique pour les décisions qui engagent l’avenir.</h1>
+            <p className="hero-intro">
+              Notre équipe conjugue expertise de haut niveau, sens stratégique et culture de la performance pour sécuriser vos
+              opérations les plus sensibles, du droit économique au numérique.
             </p>
             <div className="hero-actions">
-              <a className="cta-button primary" href="#contact">
-                Book a Strategy Call
+              <a className="cta primary" href="#contact">
+                Organiser une consultation
               </a>
-              <a className="cta-button ghost" href="#practice-areas">
-                Explore Services
+              <a className="cta secondary" href="mailto:contact@ponthieuavocats.com">
+                contact@ponthieuavocats.com
               </a>
             </div>
-            <div className="hero-highlights">
+            <dl className="hero-highlights">
               <div>
-                <strong>24-hour response</strong>
-                <span>Dedicated partner on every case</span>
+                <dt>Réactivité</dt>
+                <dd>Un interlocuteur dédié et disponible 24h/24</dd>
               </div>
               <div>
-                <strong>Multi-jurisdictional team</strong>
-                <span>Licensed across the Southeast</span>
+                <dt>Accompagnement sur-mesure</dt>
+                <dd>Interventions en France et à l’international</dd>
               </div>
-            </div>
+              <div>
+                <dt>Excellence sectorielle</dt>
+                <dd>Aéronautique, luxe, énergie, mobilités</dd>
+              </div>
+            </dl>
           </div>
-          <aside className="consult-card" id="contact">
-            <h2>Schedule a Consultation</h2>
-            <p>Share your goals and we will tailor a legal roadmap within one business day.</p>
-            <form className="consult-form">
-              <label>
-                Name
-                <input type="text" name="name" placeholder="Your full name" />
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" placeholder="you@example.com" />
-              </label>
-              <label>
-                Matter Type
-                <select name="service">
-                  <option value="">Select an area</option>
-                  {practiceAreas.map((area) => (
-                    <option key={area.title} value={area.title}>
-                      {area.title}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                Brief Summary
-                <textarea name="summary" rows="3" placeholder="How can we help?" />
-              </label>
-              <button type="submit">Request Consultation</button>
-            </form>
-            <p className="disclaimer">No attorney-client relationship is formed by submitting this form.</p>
-          </aside>
         </section>
 
-        <section className="stats" aria-label="Firm statistics">
-          {stats.map((item) => (
-            <div key={item.label}>
-              <p className="stat-value">{item.value}</p>
-              <p className="stat-label">{item.label}</p>
-            </div>
-          ))}
-        </section>
-
-        <section className="practice" id="practice-areas">
-          <header className="section-heading">
-            <p className="eyebrow">Practice Areas</p>
-            <h2>Comprehensive counsel tailored to your goals</h2>
+        <section className="section activities" id="activites">
+          <div className="section-header">
+            <p className="section-eyebrow">Activités</p>
+            <h2>Des compétences transverses pour sécuriser vos enjeux</h2>
             <p>
-              Our attorneys collaborate across disciplines to offer proactive guidance and swift responses when stakes are
-              highest.
+              Chaque mission est pilotée par un associé afin de garantir une relation de confiance et une maîtrise totale de vos
+              dossiers sensibles.
             </p>
-          </header>
-          <div className="card-grid">
-            {practiceAreas.map((area) => (
-              <article key={area.title} className="info-card">
-                <h3>{area.title}</h3>
-                <p>{area.description}</p>
-                <a href="#contact" className="text-link">
-                  Talk to an attorney
+          </div>
+          <div className="card-list">
+            {activities.map((activity) => (
+              <article key={activity.title} className="card">
+                <h3>{activity.title}</h3>
+                <p>{activity.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section publications" id="publications">
+          <div className="section-header">
+            <p className="section-eyebrow">Publications</p>
+            <h2>Analyses & retours d’expérience</h2>
+            <p>Une sélection d’articles issus de notre blog pour éclairer vos décisions stratégiques.</p>
+          </div>
+          <div className="card-list">
+            {publications.map((article) => (
+              <article key={article.title} className="card">
+                <p className="card-date">{article.date}</p>
+                <h3>{article.title}</h3>
+                <p>{article.excerpt}</p>
+                <a className="text-link" href={article.link}>
+                  Lire l’article
                 </a>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="about" id="about">
-          <div className="section-heading">
-            <p className="eyebrow">Why clients choose us</p>
-            <h2>An agile firm with the depth of a national practice</h2>
+        <section className="section team" id="equipe">
+          <div className="section-header">
+            <p className="section-eyebrow">Nos avocats</p>
+            <h2>Une équipe engagée à vos côtés</h2>
+            <p>Des profils complémentaires réunis par l’exigence, la créativité et la défense de vos intérêts.</p>
           </div>
-          <div className="about-content">
-            <p>
-              Ponthieu Legal Group is a collective of former big-law partners and in-house counsel united by a belief in
-              human-centered advocacy. We stay close to your business, anticipate risk, and craft legal strategies that
-              accelerate momentum.
-            </p>
-            <ul>
-              <li>Client dashboards that keep matters transparent and on track.</li>
-              <li>Cross-functional teams fluent in finance, technology, and regulatory landscapes.</li>
-              <li>Alternative fee structures designed for predictability without compromising excellence.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="testimonials" id="testimonials">
-          <header className="section-heading">
-            <p className="eyebrow">Client Testimonials</p>
-            <h2>What our partners say</h2>
-          </header>
-          <div className="card-grid testimonials-grid">
-            {testimonials.map((entry) => (
-              <figure key={entry.name} className="testimonial-card">
-                <blockquote>“{entry.quote}”</blockquote>
-                <figcaption>
-                  <span className="name">{entry.name}</span>
-                  <span className="role">{entry.role}</span>
-                </figcaption>
-              </figure>
+          <div className="team-grid">
+            {team.map((member) => (
+              <article key={member.email} className="team-card">
+                <div className="team-image" role="img" aria-label={member.imageAlt} style={{ backgroundImage: `url(${member.image})` }} />
+                <div className="team-content">
+                  <h3>{member.name}</h3>
+                  <p className="team-role">{member.role}</p>
+                  <a href={`mailto:${member.email}`} className="text-link">
+                    {member.email}
+                  </a>
+                </div>
+              </article>
             ))}
           </div>
         </section>
 
-        <section className="cta">
-          <div className="cta-content">
-            <h2>Ready to move forward with confidence?</h2>
-            <p>
-              We partner with leaders who demand clarity, precision, and responsive counsel. Let’s discuss how our team can
-              advance your objectives.
-            </p>
-            <a className="cta-button primary" href="mailto:hello@ponthieulegal.com">
-              Email hello@ponthieulegal.com
-            </a>
+        <section className="section vision" id="vision">
+          <div className="section-header">
+            <p className="section-eyebrow">Notre vision du métier d’avocat</p>
+            <h2>Allier expérience, dynamisme et proximité</h2>
           </div>
+          <div className="vision-content">
+            <p>
+              J’ai souhaité créer un cabinet à taille humaine, qui, par la composition même de son équipe, dispose d’une solide
+              expérience alliée à un fort dynamisme, un engagement et une disponibilité sans faille pour ses clients.
+            </p>
+            <p>
+              Nous connaissons notre métier, ce qui nous permet d’être très réactifs et de satisfaire vos besoins spécifiques.
+              Forts de notre expertise, nous vous conseillons et vous défendons dans différents domaines du droit, avec une
+              orientation particulière en droit de la propriété intellectuelle et en droit économique, dans des secteurs divers
+              (aéronautique, cosmétique, alimentation, énergies renouvelables, entreprises de transport), tant en France qu’à
+              l’étranger (Royaume-Uni, Israël, États-Unis).
+            </p>
+            <p>
+              Notre Cabinet apporte une écoute quotidienne aux entreprises, les aide à franchir des étapes importantes de la vie
+              des affaires, et les assiste dans leur prise de décisions en vue d’une meilleure protection de leurs intérêts.
+            </p>
+            <p>
+              Nous avons récemment développé une activité de DPO (Data Protection Officer) dans le cadre du règlement RGPD sur la
+              protection des données personnelles.
+            </p>
+          </div>
+        </section>
+
+        <section className="section contact" id="contact">
+          <div className="section-header">
+            <p className="section-eyebrow">Contact</p>
+            <h2>Construisons ensemble votre stratégie juridique</h2>
+            <p>Confiez-nous les détails de votre projet : nous revenons vers vous sous 24 heures ouvrées.</p>
+          </div>
+          <form className="contact-form">
+            <div className="form-row">
+              <label>
+                Nom complet
+                <input type="text" name="nom" placeholder="Votre nom et prénom" required />
+              </label>
+              <label>
+                Adresse e-mail
+                <input type="email" name="email" placeholder="vous@entreprise.com" required />
+              </label>
+            </div>
+            <div className="form-row">
+              <label>
+                Organisation
+                <input type="text" name="organisation" placeholder="Nom de votre société" />
+              </label>
+              <label>
+                Domaine d’intervention
+                <select name="domaine" defaultValue="">
+                  <option value="" disabled>
+                    Sélectionnez une activité
+                  </option>
+                  {activities.map((activity) => (
+                    <option key={activity.title} value={activity.title}>
+                      {activity.title}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <label>
+              Message
+              <textarea name="message" rows="5" placeholder="Présentez votre dossier en quelques lignes" required />
+            </label>
+            <button type="submit">Envoyer ma demande</button>
+            <p className="form-disclaimer">
+              Les informations fournies sont strictement confidentielles. Aucun engagement n’est conclu avant la signature d’une
+              lettre de mission.
+            </p>
+          </form>
         </section>
       </main>
 
       <footer className="site-footer">
-        <div>
-          <p className="brand-name">Ponthieu Legal Group</p>
-          <p>1200 Canal Street, Suite 500 • New Orleans, LA 70112</p>
-          <p>Tel: (504) 555-0199</p>
-        </div>
-        <div className="footer-links">
-          <a href="#practice-areas">Practice Areas</a>
-          <a href="#about">About</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <p className="copyright">© {new Date().getFullYear()} Ponthieu Legal Group. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Ponthieu Avocats. Tous droits réservés.</p>
       </footer>
     </div>
   )
