@@ -1,28 +1,56 @@
+import { Button } from '@/components/ui/button'
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import {
+  Item,
+  ItemContent,
+  ItemDescription,
+  ItemTitle,
+} from '@/components/ui/item'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
+
+const navLinks = [
+  { href: '#activites', label: 'Activités' },
+  { href: '#publications', label: 'Publications' },
+  { href: '#equipe', label: 'Nos avocats' },
+  { href: '#vision', label: 'Notre vision' },
+  { href: '#contact', label: 'Contact' },
+]
+
 const activities = [
   {
     title: 'Droit Économique',
     description:
-      'Structuration de vos opérations commerciales, compliance concurrentielle et accompagnement stratégique en France et à l’international.',
+      'Structuration des opérations commerciales, conformité concurrentielle et défense de vos intérêts stratégiques.',
   },
   {
     title: 'Data Protection Officer (DPO)',
     description:
-      'Pilotage de votre conformité RGPD, cartographie des risques, audits de protection des données et gouvernance digitale.',
+      'Pilotage de votre conformité RGPD, gouvernance des données, cartographies des risques et audits ciblés.',
   },
   {
     title: 'Droit des contrats',
     description:
-      'Négociation, rédaction et sécurisation de vos contrats complexes pour protéger durablement vos engagements.',
+      'Négociation, rédaction et sécurisation de vos contrats pour protéger durablement vos engagements clés.',
   },
   {
     title: 'Contentieux',
     description:
-      'Représentation incisive devant toutes juridictions, stratégie de règlement des litiges et procédures d’urgence.',
+      'Stratégie pré-contentieuse, représentation incisive devant toutes juridictions et procédures d’urgence.',
   },
   {
     title: 'Droit du sport',
     description:
-      'Accompagnement des acteurs du sport sur les transferts, partenariats, contrats d’image et gouvernance des clubs.',
+      'Accompagnement des acteurs du sport sur les partenariats, contrats d’image et gouvernance des clubs.',
   },
   {
     title: 'Propriété intellectuelle',
@@ -31,8 +59,7 @@ const activities = [
   },
   {
     title: 'Droit de l’informatique',
-    description:
-      'Sécurisation de vos projets technologiques, contrats IT, cloud et logiciels critiques.',
+    description: 'Sécurisation de vos projets technologiques, contrats IT, cloud et logiciels critiques.',
   },
 ]
 
@@ -40,22 +67,22 @@ const publications = [
   {
     title: 'Cartographier les risques RGPD dans un groupe international',
     excerpt:
-      'Nos équipes déploient un dispositif de gouvernance des données pour sécuriser les échanges transfrontaliers et renforcer la confiance des utilisateurs.',
-    date: 'Mars 2024',
+      'Nos équipes mettent en place un dispositif de gouvernance pour fluidifier les transferts de données transfrontaliers.',
+    date: 'Insights — Mars 2024',
     link: '#',
   },
   {
-    title: 'Les clauses essentielles d’un contrat SaaS premium',
+    title: 'Les clauses déterminantes d’un contrat SaaS premium',
     excerpt:
-      'Checklist des stipulations à fort enjeu pour préserver votre propriété intellectuelle et vos engagements de disponibilité.',
-    date: 'Février 2024',
+      'Check-list des stipulations à fort enjeu pour préserver votre propriété intellectuelle et vos engagements de service.',
+    date: 'Tech & Médias — Février 2024',
     link: '#',
   },
   {
     title: 'Contentieux économique : anticiper pour mieux défendre',
     excerpt:
-      'Analyse des leviers pré-contentieux pour sécuriser vos relations commerciales et optimiser vos chances de succès.',
-    date: 'Janvier 2024',
+      'Analyse des leviers pré-contentieux pour sécuriser vos relations commerciales et optimiser vos positions.',
+    date: 'Économie — Janvier 2024',
     link: '#',
   },
 ]
@@ -65,33 +92,47 @@ const team = [
     name: 'Benjamin Ponthieu',
     role: 'Avocat à la cour',
     email: 'benjamin@ponthieuavocats.com',
-    image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
+    image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
     imageAlt: 'Young woman with long red hair against teal backdrop',
   },
   {
     name: 'Salomé Larcher',
     role: 'Avocat à la cour',
     email: 'salome@ponthieuavocats.com',
-    image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
+    image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
     imageAlt: 'Young woman with long red hair against teal backdrop',
   },
   {
     name: 'François Ponthieu',
     role: 'Avocat à la cour',
     email: 'francois@ponthieuavocats.com',
-    image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
+    image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
     imageAlt: 'Young woman with long red hair against teal backdrop',
   },
   {
     name: 'Diane Rattalino',
     role: 'Avocat à la cour',
     email: 'diane@ponthieuavocats.com',
-    image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
+    image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
     imageAlt: 'Young woman with long red hair against teal backdrop',
+  },
+]
+
+const heroHighlights = [
+  {
+    eyebrow: 'International',
+    title: 'France, Europe & États-Unis',
+    description: 'Coordination sur-mesure pour les groupes internationaux, dans votre fuseau horaire.',
+  },
+  {
+    eyebrow: 'Réactivité',
+    title: '24h pour un premier retour',
+    description: 'Un associé référent reste disponible et orchestre l’équipe projet dédiée.',
+  },
+  {
+    eyebrow: 'Secteurs',
+    title: 'Innovation & croissance',
+    description: 'Aéronautique, luxe, énergie, mobilités, tech et nouveaux modèles économiques.',
   },
 ]
 
@@ -107,67 +148,68 @@ export default function Home() {
           </span>
         </a>
         <nav className="site-nav" aria-label="Navigation principale">
-          <a href="#activites">Activités</a>
-          <a href="#publications">Publications</a>
-          <a href="#equipe">Nos avocats</a>
-          <a href="#vision">Notre vision</a>
-          <a href="#contact">Contact</a>
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
         </nav>
-        <a className="header-cta" href="#contact">
-          Prendre rendez-vous
-        </a>
+        <Button as="a" href="#contact" variant="secondary" size="sm" className="header-cta">
+          Consultation
+        </Button>
       </header>
 
       <main>
         <section className="hero" id="accueil">
           <div className="hero-overlay" />
           <div className="hero-content">
-            <p className="hero-eyebrow">Cabinet à taille humaine, impact international</p>
-            <h1>Votre partenaire juridique pour les décisions qui engagent l’avenir.</h1>
+            <p className="hero-eyebrow">Cabinet à taille humaine — Impact global</p>
+            <h1>Nous sécurisons vos décisions structurantes et vos innovations stratégiques.</h1>
             <p className="hero-intro">
-              Notre équipe conjugue expertise de haut niveau, sens stratégique et culture de la performance pour sécuriser vos
-              opérations les plus sensibles, du droit économique au numérique.
+              Ponthieu Avocats associe expertise juridique de haut niveau et culture du résultat pour accompagner vos projets en
+              droit économique, numérique et propriété intellectuelle.
             </p>
             <div className="hero-actions">
-              <a className="cta primary" href="#contact">
+              <Button href="#contact" as="a" variant="primary" size="lg">
                 Organiser une consultation
-              </a>
-              <a className="cta secondary" href="mailto:contact@ponthieuavocats.com">
+              </Button>
+              <Button href="mailto:contact@ponthieuavocats.com" as="a" variant="ghost" size="lg">
                 contact@ponthieuavocats.com
-              </a>
+              </Button>
             </div>
-            <dl className="hero-highlights">
-              <div>
-                <dt>Réactivité</dt>
-                <dd>Un interlocuteur dédié et disponible 24h/24</dd>
-              </div>
-              <div>
-                <dt>Accompagnement sur-mesure</dt>
-                <dd>Interventions en France et à l’international</dd>
-              </div>
-              <div>
-                <dt>Excellence sectorielle</dt>
-                <dd>Aéronautique, luxe, énergie, mobilités</dd>
-              </div>
-            </dl>
+            <div className="hero-highlight-list" role="list">
+              {heroHighlights.map((highlight) => (
+                <Item key={highlight.title} variant="outline" size="sm" className="hero-highlight">
+                  <ItemContent>
+                    <span className="hero-highlight-eyebrow">{highlight.eyebrow}</span>
+                    <ItemTitle as="h3">{highlight.title}</ItemTitle>
+                    <ItemDescription>{highlight.description}</ItemDescription>
+                  </ItemContent>
+                </Item>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="section activities" id="activites">
           <div className="section-header">
             <p className="section-eyebrow">Activités</p>
-            <h2>Des compétences transverses pour sécuriser vos enjeux</h2>
+            <h2>Protéger, structurer et défendre vos enjeux clés</h2>
             <p>
-              Chaque mission est pilotée par un associé afin de garantir une relation de confiance et une maîtrise totale de vos
-              dossiers sensibles.
+              Chaque dossier est orchestré par un associé qui mobilise des experts dédiés pour des solutions juridiques incisives
+              et adaptables.
             </p>
           </div>
-          <div className="card-list">
+          <div className="activities-grid">
             {activities.map((activity) => (
-              <article key={activity.title} className="card">
-                <h3>{activity.title}</h3>
-                <p>{activity.description}</p>
-              </article>
+              <Card key={activity.title} className="activity-card">
+                <CardHeader>
+                  <CardTitle>{activity.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>{activity.description}</CardDescription>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </section>
@@ -175,19 +217,25 @@ export default function Home() {
         <section className="section publications" id="publications">
           <div className="section-header">
             <p className="section-eyebrow">Publications</p>
-            <h2>Analyses & retours d’expérience</h2>
-            <p>Une sélection d’articles issus de notre blog pour éclairer vos décisions stratégiques.</p>
+            <h2>Regards croisés sur l’actualité juridique</h2>
+            <p>Une sélection d’analyses issues de notre blog pour éclairer vos décisions.</p>
           </div>
-          <div className="card-list">
+          <div className="publications-grid">
             {publications.map((article) => (
-              <article key={article.title} className="card">
-                <p className="card-date">{article.date}</p>
-                <h3>{article.title}</h3>
-                <p>{article.excerpt}</p>
-                <a className="text-link" href={article.link}>
-                  Lire l’article
-                </a>
-              </article>
+              <Card key={article.title} className="publication-card">
+                <CardHeader>
+                  <CardAction>{article.date}</CardAction>
+                  <CardTitle>{article.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>{article.excerpt}</CardDescription>
+                </CardContent>
+                <CardFooter>
+                  <Button as="a" href={article.link} variant="ghost" size="sm">
+                    Lire l’article
+                  </Button>
+                </CardFooter>
+              </Card>
             ))}
           </div>
         </section>
@@ -195,50 +243,59 @@ export default function Home() {
         <section className="section team" id="equipe">
           <div className="section-header">
             <p className="section-eyebrow">Nos avocats</p>
-            <h2>Une équipe engagée à vos côtés</h2>
+            <h2>Une équipe engagée et accessible</h2>
             <p>Des profils complémentaires réunis par l’exigence, la créativité et la défense de vos intérêts.</p>
           </div>
           <div className="team-grid">
             {team.map((member) => (
-              <article key={member.email} className="team-card">
-                <div className="team-image" role="img" aria-label={member.imageAlt} style={{ backgroundImage: `url(${member.image})` }} />
-                <div className="team-content">
-                  <h3>{member.name}</h3>
+              <Card key={member.email} className="team-card">
+                <CardHeader>
+                  <div
+                    className="team-image"
+                    role="img"
+                    aria-label={member.imageAlt}
+                    style={{ backgroundImage: `url(${member.image})` }}
+                  />
+                </CardHeader>
+                <CardContent>
+                  <CardTitle>{member.name}</CardTitle>
                   <p className="team-role">{member.role}</p>
                   <a href={`mailto:${member.email}`} className="text-link">
                     {member.email}
                   </a>
-                </div>
-              </article>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </section>
 
         <section className="section vision" id="vision">
-          <div className="section-header">
-            <p className="section-eyebrow">Notre vision du métier d’avocat</p>
-            <h2>Allier expérience, dynamisme et proximité</h2>
-          </div>
-          <div className="vision-content">
-            <p>
-              J’ai souhaité créer un cabinet à taille humaine, qui, par la composition même de son équipe, dispose d’une solide
-              expérience alliée à un fort dynamisme, un engagement et une disponibilité sans faille pour ses clients.
-            </p>
-            <p>
-              Nous connaissons notre métier, ce qui nous permet d’être très réactifs et de satisfaire vos besoins spécifiques.
-              Forts de notre expertise, nous vous conseillons et vous défendons dans différents domaines du droit, avec une
-              orientation particulière en droit de la propriété intellectuelle et en droit économique, dans des secteurs divers
-              (aéronautique, cosmétique, alimentation, énergies renouvelables, entreprises de transport), tant en France qu’à
-              l’étranger (Royaume-Uni, Israël, États-Unis).
-            </p>
-            <p>
-              Notre Cabinet apporte une écoute quotidienne aux entreprises, les aide à franchir des étapes importantes de la vie
-              des affaires, et les assiste dans leur prise de décisions en vue d’une meilleure protection de leurs intérêts.
-            </p>
-            <p>
-              Nous avons récemment développé une activité de DPO (Data Protection Officer) dans le cadre du règlement RGPD sur la
-              protection des données personnelles.
-            </p>
+          <div className="vision-shell">
+            <div className="section-header">
+              <p className="section-eyebrow">Notre vision du métier d’avocat</p>
+              <h2>Allier expérience, dynamisme et proximité</h2>
+            </div>
+            <div className="vision-content">
+              <p>
+                J’ai souhaité créer un cabinet à taille humaine, qui, par la composition même de son équipe, dispose d’une solide
+                expérience alliée à un fort dynamisme, un engagement et une disponibilité sans faille pour ses clients.
+              </p>
+              <p>
+                Nous connaissons notre métier, ce qui nous permet d’être très réactifs et de satisfaire vos besoins spécifiques.
+                Forts de notre expertise, nous vous conseillons et vous défendons dans différents domaines du droit, avec une
+                orientation particulière en droit de la propriété intellectuelle et en droit économique, dans des secteurs divers
+                (aéronautique, cosmétique, alimentation, énergies renouvelables, entreprises de transport), tant en France qu’à
+                l’étranger (Royaume-Uni, Israël, États-Unis).
+              </p>
+              <p>
+                Notre Cabinet apporte une écoute quotidienne aux entreprises, les aide à franchir des étapes importantes de la vie
+                des affaires, et les assiste dans leur prise de décisions en vue d’une meilleure protection de leurs intérêts.
+              </p>
+              <p>
+                Nous avons récemment développé une activité de DPO (Data Protection Officer) dans le cadre du règlement RGPD sur la
+                protection des données personnelles.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -248,46 +305,54 @@ export default function Home() {
             <h2>Construisons ensemble votre stratégie juridique</h2>
             <p>Confiez-nous les détails de votre projet : nous revenons vers vous sous 24 heures ouvrées.</p>
           </div>
-          <form className="contact-form">
-            <div className="form-row">
-              <label>
-                Nom complet
-                <input type="text" name="nom" placeholder="Votre nom et prénom" required />
-              </label>
-              <label>
-                Adresse e-mail
-                <input type="email" name="email" placeholder="vous@entreprise.com" required />
-              </label>
-            </div>
-            <div className="form-row">
-              <label>
-                Organisation
-                <input type="text" name="organisation" placeholder="Nom de votre société" />
-              </label>
-              <label>
-                Domaine d’intervention
-                <select name="domaine" defaultValue="">
-                  <option value="" disabled>
-                    Sélectionnez une activité
-                  </option>
-                  {activities.map((activity) => (
-                    <option key={activity.title} value={activity.title}>
-                      {activity.title}
+          <Card className="contact-card">
+            <CardContent>
+              <form className="contact-form">
+                <div className="form-row">
+                  <Label htmlFor="nom">Nom complet</Label>
+                  <Input id="nom" name="nom" placeholder="Votre nom et prénom" required />
+                </div>
+                <div className="form-row">
+                  <Label htmlFor="email">Adresse e-mail</Label>
+                  <Input id="email" name="email" type="email" placeholder="vous@entreprise.com" required />
+                </div>
+                <div className="form-row">
+                  <Label htmlFor="organisation">Organisation</Label>
+                  <Input id="organisation" name="organisation" placeholder="Nom de votre société" />
+                </div>
+                <div className="form-row">
+                  <Label htmlFor="domaine">Domaine d’intervention</Label>
+                  <select id="domaine" name="domaine" defaultValue="" className="ui-select">
+                    <option value="" disabled>
+                      Sélectionnez une activité
                     </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-            <label>
-              Message
-              <textarea name="message" rows="5" placeholder="Présentez votre dossier en quelques lignes" required />
-            </label>
-            <button type="submit">Envoyer ma demande</button>
-            <p className="form-disclaimer">
-              Les informations fournies sont strictement confidentielles. Aucun engagement n’est conclu avant la signature d’une
-              lettre de mission.
-            </p>
-          </form>
+                    {activities.map((activity) => (
+                      <option key={activity.title} value={activity.title}>
+                        {activity.title}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="form-row">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    placeholder="Présentez votre dossier en quelques lignes"
+                    required
+                  />
+                </div>
+                <Button type="submit" size="lg" className="submit-button">
+                  Envoyer ma demande
+                </Button>
+                <p className="form-disclaimer">
+                  Les informations fournies sont strictement confidentielles. Aucun engagement n’est conclu avant la signature
+                  d’une lettre de mission.
+                </p>
+              </form>
+            </CardContent>
+          </Card>
         </section>
       </main>
 
